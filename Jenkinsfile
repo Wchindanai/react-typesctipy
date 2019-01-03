@@ -20,7 +20,7 @@ pipeline {
             echo 'Starting to build docker image'
             script {
                 docker.withRegistry("", registryCredential) {
-                    def customImage = docker.build("swe3tdream/react-typescript:latest")
+                    def customImage = docker.build("swe3tdream/react-typescript")
                     customImage.push()
                 }
             }
