@@ -12,13 +12,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-          sh 'ls'
         sh 'yarn install && yarn build'
       }
     }
-    stage('Test'){
-        steps {
-            sh 'ls'
+    stage('Build Docker') {
+        stage {
+          docker.build("swe3tdream/react-typescript")
         }
     }
   }
