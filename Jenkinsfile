@@ -16,9 +16,6 @@ pipeline {
       }
     }
     stage('Build Docker') {
-        agent { 
-            docker 'docker:dind'
-        }
         steps {
             echo 'Starting to build docker image'
             script {
