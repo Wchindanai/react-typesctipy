@@ -1,7 +1,6 @@
 pipeline {
   environment {
-    registry = "docker_hub_account/repository_name"
-    registryCredential = 'dockerhub'
+    registryCredential = 'b36c7346-1886-417f-b94f-8bb657f714d1'
   }
   agent any
   stages {
@@ -20,7 +19,7 @@ pipeline {
         steps {
             echo 'Starting to build docker image'
             script {
-                def customImage = docker.build("swe3tdream/react-typescript:latest")
+                def customImage = docker.build("swe3tdream/react-typescript:latest", registryCredential)
                 customImage.push()
             }
         }
