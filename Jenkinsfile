@@ -16,7 +16,7 @@ pipeline {
       }
     }
     stage('Build Docker') {
-        stage {
+        steps {
           docker.build("swe3tdream/react-typescript")
         }
     }
