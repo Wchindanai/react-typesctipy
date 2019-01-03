@@ -19,7 +19,7 @@ pipeline {
         steps {
             echo 'Starting to build docker image'
             script {
-                docker.withRegistry("https://hub.docker.com", 'dockerhub') {
+                withDockerRegistry(registry: [credentialsId: 'dockerhub']) {
                     def customImage = docker.build("swe3tdream/react-typescript")
                     customImage.push()
                 }
