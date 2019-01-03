@@ -16,8 +16,13 @@ pipeline {
       }
     }
     stage('Build Docker') {
+        agent { dockerfile true }
         steps {
-          docker.build("swe3tdream/react-typescript")
+            echo 'Starting to build docker image'
+            script {
+                def customImage = docker.build("swe3tdream/react-typescript:latest")
+                customImage.push()
+            }
         }
     }
   }
