@@ -12,6 +12,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+          sh 'ls'
         sh 'yarn install && yarn build'
       }
     }
