@@ -14,9 +14,11 @@ pipeline {
       steps {
         sh 'yarn install && yarn build'
       }
-      steps {
-          sh 'ls'
-      }
+    }
+    stage('Test'){
+        steps {
+            sh 'ls'
+        }
     }
   }
 }
