@@ -17,7 +17,6 @@ pipeline {
     }
     stage('Build Docker') {
         agent { 
-            dockerfile true 
             docker 'docker:dind'
         }
         steps {
